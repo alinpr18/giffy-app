@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { useLocation } from "wouter";
-import ListOfGifs from "components/ListOfGifs";
-import { useGifs } from "hooks/useGifs";
-import TrendingSearches from "components/TrendingSearches";
+import ListOfGifs from "../../components/ListOfGifs";
+import { useGifs } from "../../hooks/useGifs";
+import TrendingSearches from "../../components/TrendingSearches";
+import "./Home.css";
 
 export default function Home() {
   const [keyword, setKeyword] = useState("");
@@ -23,12 +24,12 @@ export default function Home() {
     <>
       <form onSubmit={handleSubmit}>
         <input
-          placeholder="Search a gif here..."
+          placeholder="Buscar un gif aquí..."
           onChange={handleChange}
           type="text"
           value={keyword}
         />
-        <button>Buscar</button>
+        <button className="Home-btn">Buscar</button>
       </form>
       <div className="App-main">
         <div className="App-results">
